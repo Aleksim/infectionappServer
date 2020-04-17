@@ -18,6 +18,8 @@ router.post('/positions', async(req,res)=>{
 
     const position = new Position({timestamp, coords})
     await position.save();
+
+    res.send('You made a post request')
 }
 )
 

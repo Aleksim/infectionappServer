@@ -1,15 +1,16 @@
 const mongoose = require('mongoose')
 
 const positionSchema = new mongoose.Schema({
-    timestamp: Number,
     coords: {
         latitude: Number,
         longitude: Number,
         altitude: Number,
+        altitudeAccuracy: Number,
         accuracy: Number,
         heading: Number,
         speed: Number
-    }
+    },
+    timestamp: Number
 })
 
 
