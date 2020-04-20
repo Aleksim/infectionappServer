@@ -11,6 +11,8 @@ const mongoose = require('mongoose')
 //information
 const bodyParser = require('body-parser')
 
+const cors = require('cors')
+
 const authRoutes = require('./routes/authRoutes')
 
 
@@ -18,6 +20,8 @@ const positionRoutes = require('./routes/positionRoutes')
 
 
 const app = express()
+
+app.use(cors())
 
 //to handle the incoming json do this:
 app.use(bodyParser.json())
