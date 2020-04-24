@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const positionSchema = new mongoose.Schema({
+const recoveredsSchema = new mongoose.Schema({
     coords: {
         latitude: Number,
         longitude: Number,
@@ -13,4 +13,4 @@ const positionSchema = new mongoose.Schema({
     timestamp: Number
 })
 
-mongoose.model('Position', positionSchema)
+mongoose.model('Recovereds', recoveredsSchema)

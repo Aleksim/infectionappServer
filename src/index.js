@@ -1,4 +1,8 @@
 require ('./models/Position')
+require ('./models/Healthies')
+require ('./models/Covids')
+require ('./models/Recovereds')
+require ('./models/Sicks')
 require('dotenv').config()
 
 
@@ -17,6 +21,11 @@ const authRoutes = require('./routes/authRoutes')
 
 
 const positionRoutes = require('./routes/positionRoutes')
+const healthiesRoutes = require('./routes/healthiesRoutes')
+const covidsRoutes = require('./routes/covidsRoutes')
+const recoveredsRoutes = require('./routes/recoveredsRoutes')
+const sicksRoutes = require('./routes/sicksRoutes')
+
 
 
 const app = express()
@@ -33,6 +42,13 @@ app.use(authRoutes)
 
 app.use(positionRoutes)
 
+app.use(healthiesRoutes)
+
+app.use(covidsRoutes)
+
+app.use(recoveredsRoutes)
+
+app.use(sicksRoutes)
 //connection string ja lisäsin salasanan siihen. We can use this mongo
 //uri to connect to our mongo instance.
 const mongoUri=process.env.MONGODB_URI
