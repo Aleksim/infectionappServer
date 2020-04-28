@@ -13,4 +13,8 @@ const healthiesSchema = new mongoose.Schema({
     timestamp: Number
 })
 
-mongoose.model('Healthies', healthiesSchema)
+healthiesArraySchema = new mongoose.Schema({
+    locations: [healthiesSchema]
+})
+
+mongoose.model('Healthies', healthiesArraySchema)
