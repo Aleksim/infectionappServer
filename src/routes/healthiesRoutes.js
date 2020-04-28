@@ -10,7 +10,7 @@ const router = express.Router()
 router.post('/healthies', async(req,res)=>{
     const{locations} = req.body
 
-    if(locations){
+    if(!locations){
         return res
         .status(422)
         .send({error: "you must provide timestamp and coords"})
