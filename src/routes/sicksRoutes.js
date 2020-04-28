@@ -8,15 +8,15 @@ const router = express.Router()
 
 
 router.post('/sicks', async(req,res)=>{
-    const{timestamp, coords} = req.body
+    const{locations} = req.body
 
-    if(!timestamp || !coords ){
+    if(!locations){
         return res
         .status(422)
         .send({error: "you must provide timestamp and coords"})
     }
     try{
-        const sicks = new Sicks({timestamp, coords})
+        const sicks = new Sicks({locations})
         await sicks.save();
         res.send(sicks)
     }catch (err) {

@@ -13,4 +13,8 @@ const sicksSchema = new mongoose.Schema({
     timestamp: Number
 })
 
-mongoose.model('Sicks', sicksSchema)
+sicksArraySchema = new mongoose.Schema({
+    locations: [sicksSchema]
+})
+
+mongoose.model('Sicks', sicksArraySchema)

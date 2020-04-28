@@ -8,15 +8,15 @@ const router = express.Router()
 
 
 router.post('/recovereds', async(req,res)=>{
-    const{timestamp, coords} = req.body
+    const{locations} = req.body
 
-    if(!timestamp || !coords ){
+    if(!locations){
         return res
         .status(422)
         .send({error: "you must provide timestamp and coords"})
     }
     try{
-        const recovereds = new Recovereds({timestamp, coords})
+        const recovereds = new Recovereds({locations})
         await recovereds.save();
         res.send(recovereds)
     }catch (err) {

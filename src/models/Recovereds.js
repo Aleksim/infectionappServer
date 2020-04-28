@@ -13,4 +13,8 @@ const recoveredsSchema = new mongoose.Schema({
     timestamp: Number
 })
 
-mongoose.model('Recovereds', recoveredsSchema)
+recoveredsArraySchema = new mongoose.Schema({
+    locations: [recoveredsSchema]
+})
+
+mongoose.model('Recovereds', recoveredsArraySchema)

@@ -13,4 +13,8 @@ const covidsSchema = new mongoose.Schema({
     timestamp: Number
 })
 
-mongoose.model('Covids', covidsSchema)
+covidsArraySchema = new mongoose.Schema({
+    locations: [covidsSchema]
+})
+
+mongoose.model('Covids', covidsArraySchema)
