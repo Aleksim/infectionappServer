@@ -7,6 +7,12 @@ const Covids = mongoose.model('Covids')
 const router = express.Router()
 
 
+router.get('/covids', async(req, res)=>{
+    const covids = await Covids.find()
+    res.send(covids)
+})
+
+
 router.post('/covids', async(req,res)=>{
     const{locations} = req.body
 

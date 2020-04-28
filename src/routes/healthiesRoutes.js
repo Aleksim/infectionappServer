@@ -6,6 +6,11 @@ const Healthies = mongoose.model('Healthies')
 // new router object:
 const router = express.Router()
 
+router.get('/healthies', async(req, res)=>{
+    const healthies = await Healthies.find()
+    res.send(healthies)
+})
+
 
 router.post('/healthies', async(req,res)=>{
     const{locations} = req.body

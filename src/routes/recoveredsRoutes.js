@@ -6,6 +6,11 @@ const Recovereds = mongoose.model('Recovereds')
 // new router object:
 const router = express.Router()
 
+router.get('/recovereds', async(req, res)=>{
+    const recovereds = await Recovereds.find()
+    res.send(recovereds)
+})
+
 
 router.post('/recovereds', async(req,res)=>{
     const{locations} = req.body
